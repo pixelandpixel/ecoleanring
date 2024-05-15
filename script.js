@@ -8,6 +8,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
 
+
+  
+// Function to logout the admin user
+function logout() {
+  localStorage.removeItem('token'); // Clear token from localStorage
+  window.location.href = '/admin.html'; // Redirect to login page
+}
+
   // Send login request to server
   fetch('/api/login', {
     method: 'POST',
